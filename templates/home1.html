@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style> 
+      table, th, td {
+      border: 1px solid black;
+      border-radius: 10px;
+      }
+
+      .dot1 {
+        height: 20px;
+        width: 25px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot2 {
+        height: 20px;
+        width: 25px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .dot3 {
+        height: 20px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div style="border: 5px solid black; height: 250px; display: flex;">
+      <img src="{{url_for('static',filename='cottage.jpg')}}" height="240px" width="70%"></img>
+    <div style="overflow: auto; flex: 1;">{{apartvalue|safe}}</div>
+    </div>
+    <div style="display: flex;">
+      <div style="flex: 1; border: 5px solid red;">
+        <section style="height: 100px;" align="center"><h2>{{val}} City <br> </h2> <h4> with preferences : </h4></section>
+        <table border="2px" align="center" width="95%" height="60%">
+          <tr align="center">
+            <th width="30%"><h2>&nbsp;Green <span class="dot1"></span> : </h2></th>
+            <td><h3>{{val1}}, {{val2}} <br>and {{val3}} are More</h3></td>
+          </tr>
+          <tr align="center">
+            <th width="30%"><h2>&nbsp;Blue &nbsp;&nbsp;<span class="dot2"></span> : </h2></th>
+            <td><h3>{{val1}}, {{val2}} <br>and {{val3}} are Moderate </h3></td>
+          </tr>
+          <tr align="center">
+            <th width="30%"><h2>&nbsp;Red &nbsp;&nbsp;<span class="dot3"></span> : </h2></th>
+            <td><h3>{{val1}}, {{val2}} and {{val3}} are Very Less</h3></td>
+          </tr>
+        </table>
+      </div>
+      <div style="border: 10px solid black; height: 450px; width: 1000px">{% include 'mapResult.html' %}</div>
+    </div>
+  </body>
+</html>

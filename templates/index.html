@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"> </script>  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"> </script>  
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acommadation</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/font/font.txt">
+  </head>
+  <body>
+    <!-- start writing your code -->
+    <header>
+        <nav>
+            <div style="margin-left:55px;">
+                Get The App
+            </div>
+            <div>
+                <ul>
+                    <li>Log In</li>
+                    <li>Sign Up</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="fliers" style="background: #7c8490;">
+            <form action="/formoutput" method="POST">
+                <h2 style="color: black;" align="center">Explore the Data : 
+                    <div class="search-container"> 
+                    <i class="material-icons" style="color:white;">location_on</i>
+                    <input type="text" name="location" autocomplete="off" placeholder="Enter City Name"><br>
+                    </div>
+                </h2>
+                <table align="center" width="80%">
+                    <tr align="center">
+                        <th><h3>Preference1 : </h3>
+                            <h5><select name="preference1" >
+                                <option>Restaurant</option>
+                                <option>Department-store</option>
+                                <option>Hospital</option>
+                                <option>Hotels</option>
+                                <option>School</option>
+                                <option>Gym</option>
+                            </select></h5>
+                        </th>
+                        <th><h3>Preference2 : </h3> 
+                            <h5><select name="preference2">
+                                <option>Restaurant</option>
+                                <option>Department-store</option>
+                                <option>Hospital</option>
+                                <option>Hotels</option>
+                                <option>School</option>
+                                <option>Gym</option>
+                            </select></h5>
+                        </th>
+                        <th><h3>Preference3 : </h3>
+                            <h5><select name="preference3">
+                                <option>Restaurant</option>
+                                <option>Department-store</option>
+                                <option>Hospital</option>
+                                <option>Hotels</option>
+                                <option>School</option>
+                                <option>Gym</option>
+                            </select></h5>
+                        </th>
+                    </tr>
+                </table>
+                <br>
+                <h4 align="center" class="activity"><input type="submit" value="submit"></h4>
+            </form>
+        </div>
+        <section class="activities-container" style="background-color: rgb(24, 67, 53);">
+            <div class="activity"> 
+                <div>
+                    <img src="{{ url_for('static',filename='restaurants-img.jpg') }}" alt="Online-Food" class="image-activity"></img>
+                </div>
+                <a href="{{url_for('rest')}}"><h3 align="center">Restaurants</h3></a>
+                <p>Explore the Food Space near You</p>
+            </div>
+            <div class="activity">
+                <div>
+                    <img src="{{ url_for('static',filename='schools-img.jpg') }}" alt="Dine-Out" class="image-activity"></img>
+                </div>
+                <a href="{{url_for('schl')}}"><h3 align="center">Schools & Colleges</h3></a>
+                <p>Explore The Study Space near You</p>
+            </div>
+            <div class="activity">
+                <div >
+                    <img src="{{ url_for('static',filename='atms-img.jpg') }}" alt="Dine-Out" class="image-activity"></img>
+                </div>
+                <a href="{{url_for('atm')}}"><h3 align="center">Any Time Money</h3></a>
+                <p>Explore all the ATM Space near You</p>
+            </div>
+        </section>
+            <!--Enter your preference1 :<input type="text" name="preference1"><br>
+            Enter your preference2 :<input type="text" name="preference2"><br>
+            Enter your preference3 :<input type="text" name="preference3"><br>
+            This is Testing Phase -->
+    </main>
+    <section id="footer">  
+        <div class="container">  
+        <div class="row text-center text-xs-center text-sm-left text-md-left">  
+        <div class="col-xs-12 col-sm-4 col-md-4">  
+        <h5> Quick links </h5>  
+          <ul class="list-unstyled quick-links">  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Home </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> About </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> FAQ </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Get Started </a> </li>  
+                      <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Videos </a> </li>  
+        </ul>  
+        </div>  
+                  <div class="col-xs-12 col-sm-4 col-md-4">  
+            <h5> Quick links </h5>  
+            <ul class="list-unstyled quick-links">  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Home </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> About </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> FAQ </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Our Services </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Expert Team </a> </li>  
+            </ul>  
+            </div>  
+            <div class="col-xs-12 col-sm-4 col-md-4">  
+            <h5> Resources </h5>  
+                     <ul class="list-unstyled quick-links">  
+             <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Security </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Global </a></li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Charts </a> </li>  
+            <li> <a href="#"> <i class="fa fa-angle-double-right"> </i> Privacy </a> </li>  
+            </ul>  
+            </div>  
+            </div>  
+            <div class="row">  
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">  
+            <ul class="list-unstyled list-inline social text-center">  
+            <li class="list-inline-item"> <a href="#"> <i class="fa fa-facebook"> </i> </a> </li>  
+                     <li class="list-inline-item"> <a href="#"> <i class="fa fa-twitter"> </i> </a> </li>  
+            <li class="list-inline-item"> <a href="#"> <i class="fa fa-instagram"> </i> </a> </li>  
+            <li class="list-inline-item"> <a href="#"> <i class="fa fa-google-plus"> </i > </a> </li>  
+            <li class="list-inline-item"> <a href="#"> <i class="fa fa-envelope"> </i> </a> </li>  
+            </ul>  
+            </div>  
+            <hr>  
+            </div>      
+            <div class="row">  
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">  
+           <p class="h6"> @2023 All right Reversed.</p>  
+            </div>  
+            <hr>  
+            </div>      
+            </div>  
+            </section>  
+        </body>  
+        </html>
+        

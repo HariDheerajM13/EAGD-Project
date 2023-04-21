@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Details Form</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='styles.css')}}">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body style="background-color: rgb(24, 67, 53);">
+        <div align="center">
+        <div style="height: 200px;">
+        <form action="/restaurantsoutput" method="POST">
+            <h2 style="color: #FFF700;" align="center">Explore the Food Space near You: 
+                <div class="search-container"> 
+                <i class="material-icons" style="color:white;">location_on</i><input type="text" name="Restlocation" placeholder="Enter City" autocomplete="off"><br>
+                </div>
+            <input type="submit" value="submit">
+            </h2>
+        </form>
+        </div>
+        <div align="center" style="border: 10px solid black; height: 450px; width: 1000px">{% include 'IndiamapResult.html' %}</div>
+        </div>
+    </body>
+</html>
